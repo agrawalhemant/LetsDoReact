@@ -6,3 +6,11 @@
 - we can use appendChild method to append one element to another element (or we can use innerHTML to write HTML inside an element).
 
 ----------------------------------------------------------------------------------------------------------------------------------------
+#index.html
+
+- react can be injected in our project using CDN (https://legacy.reactjs.org/docs/cdn-links.html)
+- as soon as we inject react using CDN, we get React & ReactDOM objects in our code (just write React or ReactDOM in console and see the contents of these object)
+- https://unpkg.com/react@18/umd/react.development.js => this file has the core react code
+- https://unpkg.com/react-dom@18/umd/react-dom.development.js => this file contains the code which is useful for DOM operations 
+- we have these two different files because React workd on different kind of devices like, phone, browser etc. So, DOM is only used with browsers.
+- 
