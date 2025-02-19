@@ -16,5 +16,7 @@
 - we can create new element using React.createElement method which takes 3 arguments (element name, an object which take attributes like id or class, children of element). Second and third arguments together are called as props of that React element. Remember this is a React element which is an object and not a heading tag of HTML.
 - creating an element is core functionality of React but to create a root we mut use ReactDOM. To create a root of React, we can use ReactDOM.createRoot and we can use .render method to render an element inside another element
 - React.createElement creates a React element but does not render it. ReactDOM.createRoot is used to render React elements/components into the DOM.
-- so the flow goes like : firstly we crated a React element heading which is of type object, then we created root element of React DOM and then we used root.render() which converts the heading react element into a HTML tag and render it inside the root.
+- so the flow goes like in App.js: firstly we crated a React element heading which is of type object, then we created root element of React DOM and then we used root.render() which converts the heading react element into a HTML tag and render it inside the root.
 - React was build to manipulate the DOM using JS because the most expensive operation inside a browser is when DOM doesn't need to manipulated and React handles it very well
+- we can write React in JS just fine like in App.js, but the code might not look very readable, that's why React is generally written in JSX.
+- 
