@@ -9,6 +9,8 @@ const parent = React.createElement('div', { id: 'parent' }, [
   ]),
 ]);
 
+console.log(parent);
+
 // const heading = React.createElement(
 //   'h1',
 //   { id: 'heading' },
@@ -16,5 +18,9 @@ const parent = React.createElement('div', { id: 'parent' }, [
 // );
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const root2 = ReactDOM.createRoot(document.getElementById('root2'));
+
+console.log(root);
 
 root.render(parent);
+root2.render(parent);
