@@ -1,0 +1,8 @@
+#intro.html
+
+- The querySelector method in JavaScript is used to select the first element within the document that matches a specified CSS selector or group of selectors. (It returns the first matching element or null if no matches are found)
+- we can use createElement method to create any new element of HTML using JS.
+- we can use innerText method to write text within an HTML element.
+- we can use appendChild method to append one element to another element (or we can use innerHTML to write HTML inside an element).
+
+----------------------------------------------------------------------------------------------------------------------------------------
