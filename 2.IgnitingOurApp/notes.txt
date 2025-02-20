@@ -12,4 +12,15 @@
 - when we install the package, we get a new file package-lock.json , which is used to keep a track of exact version of packages that are installed currently.
 - the integrity field inside package-lock.json keeps a hash which is used to deal with the problem of it was working on my machine. It help to keep track/verify of exact same verison in dev and prod.
 - node_modules contains all the files/code which we downloaded from npm while installing parcel or any other package. These are basically the dependencies being used by our package and known as transitive dependencies.
-
+- never push node_modules on github and put this folder in .gitignore file since these packages are of very high size and unnecessary. If we wish to get all the node_modules again then we can simply run the command npm install
+____________________________________________________________________________________________________________________________________
+- to ignite our app we can use the command: npx parcel index.html ; here npm is the package executer, parcel is the package that we need to execute and index.html is the main page of out application. this command build our app and host it on a server locally
+- as soon as we ignite our app using above command, we get two new folders: .parcel-cache and dist. The .parcel-cache folder contains cached files generated during the build process. Its purpose is to speed up subsequent builds by reusing already processed files rather than rebuilding everything from scratch. The dist folder holds the final, bundled, and minified files that are ready for deployment in prod. This includes your JavaScript files, CSS files, images, and other assets, all bundled together in a way that the browser can load efficiently.
+- parcel builds our code, bundles our code, make a server, host our app on that server, do HMR (hot module reload/replacement) using file watching algorithm (this algo is written in C++), image optimizations, minifies the files, compress the files, consistent hashing, code splitting, differential bundling(support different browsers even older ones), diagnostics, error sugestions, HTTPs support, tree shaking (unused or unnecessary code from files i.e. the functions which are not being used anywhere), and much more
+- we can use npx parcel build index.html to make a production build of our app. this build will be present in dist folder
+- React is not fast in itself but it use powers of bundlers, babel and other libraries that help to make it faster
+____________________________________________________________________________________________________________________________________
+- install react and react-dom in our project using npm i react and npm i react-dom respectively
+- import React and ReactDOM from 'react' and 'react-dom/client' respectively and remove the React CDN links from html file
+____________________________________________________________________________________________________________________________________
+- we can add browserslist in package.json , it takes an array in which we can tell for which browsers we want our app to definitely work in any condition. Please visit https://browserslist.dev/ or https://github.com/browserslist/browserslist#query-composition for better understanding.
