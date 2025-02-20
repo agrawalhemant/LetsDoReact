@@ -1,0 +1,22 @@
+{
+  "name": "lets-do-react",
+  "version": "1.0.0",
+  "description": "Just a simple tutorial to get started with React",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agrawalhemant/LetsDoReact.git"
+  },
+  "author": "Hemant Agrawal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agrawalhemant/LetsDoReact/issues"
+  },
+  "homepage": "https://github.com/agrawalhemant/LetsDoReact#readme",
+  "devDependencies": {
+    "parcel": "^2.13.3"
+  }
+}

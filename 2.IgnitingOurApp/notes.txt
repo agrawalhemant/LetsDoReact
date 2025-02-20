@@ -1,0 +1,15 @@
+- use npm init in our folder to manage our dependencies using package.json
+- npm doesn't stand for node package manager, in fact there is no full form of npm
+- npm is just a package manager for the JS runtime node.js
+- package.json is a config file for npm
+- packages are also known as dependencies and package.json keeps track for all the packages used in project
+- one of the most important package/dependency in a react project is bundler, Bundler helps to bundle/packages our whole code, it minifies it, clean it so that it can be easily and properly pushed to production.
+- webpack, parcel, vite etc are all different bundlers
+- there are two types of dependencies in project: dev dependencies and normal dependencies. dev dependencies are only used in development and normal dependencies are used for production as well.
+- use npm install -D parcel to download parcel bundler package
+- bundler is a type of dev dependency that's why we use -D so that it will not be used on production
+- we can see parcel under devDependencies in package.json with a ^(caret) before version. A caret is used when we want to auto-upgrade our package to newer minor version. For ex: 2.13.3 may get updated to 2.13.4 but not to 3.0.1 , we can also use ~(tilde) instead of ^ which will auto update our package to latest major version. So in case of ~, our package may get updated to 3.0.1 in future
+- when we install the package, we get a new file package-lock.json , which is used to keep a track of exact version of packages that are installed currently.
+- the integrity field inside package-lock.json keeps a hash which is used to deal with the problem of it was working on my machine. It help to keep track/verify of exact same verison in dev and prod.
+- node_modules contains all the files/code which we downloaded from npm while installing parcel or any other package. These are basically the dependencies being used by our package and known as transitive dependencies.
+
