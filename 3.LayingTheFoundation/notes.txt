@@ -1,0 +1,10 @@
+- we can create elements code using jsx instead of React to make development easier for developers but it is not mandatory to write react in jsx
+- jsx is combination of HTML & JS, it looks like HTML but it is not HTML inside JS
+- for ex: 
+const heading = React.createElement("h1", {id : "heading}, "heading in React"); //React
+can be written as
+const heading = <h1 id="heading">heading using JSX</h1>; //JSX
+both are valid reactElements but JSX is preferrable as it is cleaner
+- our browser doesn't understand jsx since it is not proper js. so Parcel transpiles the jsx code to React.createElement (browser compatible JS) using Babel library. And then the reactElement is passed to ReactDOM.render() which converts ReactElement to DOM Element. Visit https://babeljs.io/ to understand babel.
+- if we need to give attributes of any tag in JSX then we need to use camelCasing (classname, tabIndex, etc.)
+- if we need to write JSX element in multiple lines instead of single line then we should wrap the JST in braces.

@@ -22,7 +22,8 @@ ________________________________________________________________________________
 ____________________________________________________________________________________________________________________________________
 - install react and react-dom in our project using npm i react and npm i react-dom respectively
 - import React and ReactDOM from 'react' and 'react-dom/client' respectively and remove the React CDN links from html file
-- we can write starta dn build commands under scripts inside package.json and then use npm run start instead of npx parcel index.html and similarly for build.
+- we should write type="module" in the script tag in index.html because React script can't be directly injected as package in html
+- we can write starta and build commands under scripts inside package.json and then use npm run start instead of npx parcel index.html and similarly for build.
 - we can also use npm start instead of npm run start, but it only works with start
 ____________________________________________________________________________________________________________________________________
 - we can add browserslist in package.json , it takes an array in which we can tell for which browsers we want our app to definitely work in any condition. Please visit https://browserslist.dev/ or https://github.com/browserslist/browserslist#query-composition for better understanding.
