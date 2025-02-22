@@ -10,8 +10,12 @@ both are valid reactElements but JSX is preferrable as it is cleaner
 - if we need to write JSX element in multiple lines instead of single line then we should wrap the JST in braces.
 ____________________________________________________________________________________________________________________________________________________
 - There are two types of React Components: Class components & Functional components.
-- Class components are not used anymore but may appear in legacy code. Mostly we use functional components.
+- Class component is older way to create component but may appear in legacy code. Mostly we use functional components.
 - Functional component is just a function that returns JSX or React element. Only difference it, it should be a named function and its name should always start with a capital letter.
 - Functional component is better than just a simple React element because it is reusable and reduce code redundancy.
 - Babel converts this component in React element and then into DOM element
-- We can also use componenet inside component which is also known as component composition. And then we can render it in root just like a simple React element.
+- We can also use component inside component which is also known as component composition. And then we can render it in root just like a simple React element.
+- we can write any piece of JS inside JSX using curly braces {} which can easily execute JS code. Executing JS code like this may also lead to cross-site scripting attack but JSX take care of it by sanitizing the code, Babel doesn't blindly execute the code.
+- using {} we can also write our React components inside another component since a React Component is just a function at the end of the day.
+- So there are three ways to write a component inside another component: <Component /> , <Component></Component> and {Component()}
+- 

@@ -27,12 +27,17 @@ const Heading = () => (
 );
 const title = <h1 className="title">Heading using JSX</h1>;
 const Title = () => title;
-
+const random = Math.random();
 const Div = () => {
   return (
     <div>
+      {random}
       <Title />
       <Heading />
+      {Title()}
+      {Heading()}
+      <Title></Title>
+      <Heading></Heading>
     </div>
   );
 };
