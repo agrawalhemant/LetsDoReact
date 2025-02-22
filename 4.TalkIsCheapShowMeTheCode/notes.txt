@@ -1,0 +1,9 @@
+- first thing before building any app should be a proper plan (high level design) like what are we exactly building, what is the process we should follow,how the design (mock) should look, what are all the functionalities, what could be the possible challenges, etc.
+__________________________________________________________________________________________________________________________________________
+- we should first make an App component which will render inside react root element, and inside the App componenet we can have Header, Body and Footer.
+- just make componenets as per convenience and design them using CSS.
+- we can also write inline css using JSX but it is not recommended to do so.
+__________________________________________________________________________________________________________________________________________
+- to make the content dynamic, we can use props (short for properties). Properties is something that we can pass to component so it is basically argument to the function.
+- we can pass the props in a componenet using a attribute (for ex: restData in our case) which will be an object. If this prop has many fields then it can be destructured inside component definition and used as necessary
+- we should always give a key to our component if we are using loop (map, for, foreach, etc) otherwise we get a warning in console regarding unique key
