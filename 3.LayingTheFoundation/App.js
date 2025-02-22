@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 // const heading = React.createElement('h1', null, 'heading text');
-const heading = (
+/*const heading = (
   <h1 id="heading" className="heading" tabIndex="1">
     heading using JSX
   </h1>
@@ -18,7 +18,23 @@ const image = (
     alt="Placeholder Image"
   />
 );
-
-console.log(heading);
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render([heading, link, image]);
+root.render([heading, link, image]);*/
+
+// React Functional component
+const Heading = () => (
+  <h1 id="heading">Heading using React Functional Component</h1>
+);
+const title = <h1 className="title">Heading using JSX</h1>;
+const Title = () => title;
+
+const Div = () => {
+  return (
+    <div>
+      <Title />
+      <Heading />
+    </div>
+  );
+};
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Div />);

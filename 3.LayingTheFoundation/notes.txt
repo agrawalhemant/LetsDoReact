@@ -8,3 +8,10 @@ both are valid reactElements but JSX is preferrable as it is cleaner
 - our browser doesn't understand jsx since it is not proper js. so Parcel transpiles the jsx code to React.createElement (browser compatible JS) using Babel library. And then the reactElement is passed to ReactDOM.render() which converts ReactElement to DOM Element. Visit https://babeljs.io/ to understand babel.
 - if we need to give attributes of any tag in JSX then we need to use camelCasing (classname, tabIndex, etc.)
 - if we need to write JSX element in multiple lines instead of single line then we should wrap the JST in braces.
+____________________________________________________________________________________________________________________________________________________
+- There are two types of React Components: Class components & Functional components.
+- Class components are not used anymore but may appear in legacy code. Mostly we use functional components.
+- Functional component is just a function that returns JSX or React element. Only difference it, it should be a named function and its name should always start with a capital letter.
+- Functional component is better than just a simple React element because it is reusable and reduce code redundancy.
+- Babel converts this component in React element and then into DOM element
+- We can also use componenet inside component which is also known as component composition. And then we can render it in root just like a simple React element.
