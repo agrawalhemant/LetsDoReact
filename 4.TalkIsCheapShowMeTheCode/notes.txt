@@ -7,3 +7,4 @@ ________________________________________________________________________________
 - to make the content dynamic, we can use props (short for properties). Properties is something that we can pass to component so it is basically argument to the function.
 - we can pass the props in a componenet using a attribute (for ex: restData in our case) which will be an object. If this prop has many fields then it can be destructured inside component definition and used as necessary
 - we should always give a key to our component if we are using loop (map, for, foreach, etc) otherwise we get a warning in console regarding unique key
+- we got the restList data from an API (https://www.eatsure.com/v1/api/get_restaurants)

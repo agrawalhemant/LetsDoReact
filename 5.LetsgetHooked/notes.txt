@@ -1,0 +1,10 @@
+- we should maintain a proper folder sturucture for our project to keep all the components separate just for maintainaince purpose.
+- we can use jsx instead of js extension for our files as well but it doesn't matter, parcel will process our code all the same. it's just a convention.
+- we can export our variables in two ways, either default export or named export: 
+    - in case of default export, we can simply export a single variable and import it easily 
+        export default Component;
+        import Component from 'path';
+    - in case of named export we have to write export keyword before variable declaration, and we have to use {} while importing it 
+        export const Component;
+        import {Component} from 'path';
+- we can use default and named export for different variables in a single js file (just export multiple variables using named export and a single variable can be exported using default export), but we can't do default and named export on the same variable.
