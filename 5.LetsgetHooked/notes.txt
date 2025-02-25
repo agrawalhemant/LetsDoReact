@@ -21,3 +21,13 @@
         setListOfRestaurants([{name:'Dominos'}, {name: 'Pizza Hut'}]);
     this will work. now, listOfRestaurants has two restaurants (Dominos and PIzza Hut)
 - as soon as the state variable is updated, react re-renders the UI (updates the DOM) that's how our UI is updated
+__________________________________________________________________________________________________________________________________________
+
+- React uses reconciliation algorithm (aka as diff algorith) behind the scenes to re-render the UI.
+- The updated and newer implementation of reconcialiation algorithm is known as known as react fiber which was introduced in React 16. Its main feature is incremental rendering which means ability to split rendering work into chunks and spread out over multiple frames. 
+- Virtual DOM is just the representation of actual DOM. It is simply made up of all the react elements which are generally nested. So in our case, App component as an object is a virtual DOM, which has different components like Header and Body, so Body is a part of virtual DOM, so as soon as there is any change in Body, react detects it with diff algorith and then re-renders the UI.
+- Diff alogorithm is a new way to find the difference between previous virtual DOM and new virtual DOM and if there is any difference found, it re-renders the UI with updated DOM. The virtual DOM can be represented as a tree whiere each element is a node, so diff-algorithm keeps an eye on this tree to detect any change.
+- So basically, react fiber is the process of comparing the previous virtual DOM with the new one to identify the minimal set of changes needed to update the real DOM, making it the core mechanism for efficient UI updates in React.
+- It is nearly impossible to find out the difference between two instances of actual DOM but it is much easier using virtual DOM since it is just like comparing two objects in JS.
+- Now we can understand the use of setListOfRestaurants function while using useState hook, it is the one which is updating the lisOfRestaurants, and as soon as it is called, react get to know that there might be some update in the data so UI should be re-rendered. So using the function to update the state variable also triggers the diff algorithm.
+- React is faster because it has very efficient diff algorithm.

@@ -7,7 +7,8 @@ const Body = () => {
   // let listOfRestaurants = restList;
 
   //state variable
-  const [listOfRestaurants, setListOfRestaurants] = useState(restList);
+  const [listOfRestaurants, setListOfRestaurants] = useState(restList); //useState return an array with 2 elements, 1st is the state variable and 2nd is the function to update the state variable. So we used array destructuring to assign the values to the variables.
+
   return (
     <div id="body">
       <div id="search">
