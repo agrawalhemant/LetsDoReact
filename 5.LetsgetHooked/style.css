@@ -72,12 +72,13 @@
 #search-btn:hover {
   background-color: #f0f;
   color: white;
+  cursor: pointer;
 }
 
 #res-cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .res-card {
   margin: 10px;

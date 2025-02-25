@@ -8,3 +8,16 @@
         export const Component;
         import {Component} from 'path';
 - we can use default and named export for different variables in a single js file (just export multiple variables using named export and a single variable can be exported using default export), but we can't do default and named export on the same variable.
+- keep the folder structure as we want since there are no hard rules for it, for now we will keep all the source code in src folder inside which we make a separate folders for Colponents and Utilities.
+- suppose we want to filter the number of restaurants on UI based on theor ratings, we can do so by putting an onClick event on the button to update the listOfRestaurants variable with only restaurants with rating mre than 4. the only problem is, even though the varibale is updated, the UI doesn't. It happens because our react code can't detect the change in data yet (if we change the list of restaurants in restLists manually then UI is updated because of HML since it is detected as a code change not data change). For this, we can use Hooks.
+- hooks in react is just normal JS functions which are basicall utility functions inbuild in react developed by Facebook developers.
+- There are two very important hooks : useState() and useEffect()
+- useState() - this is used to generate superpowerful state variable. It's used to maintain the state of component/variable. It is imported as a named import from react.
+- it can be used as below: 
+        const [listOfRestaurants, setListOfRestaurants] = useState([]);
+    here, listOfRestaurants is the state variable, setListOfRestaurants is a function which can be used to modify the value of listOfRestaurants variable (since listOfRestaurants is a state variable, it can't be modified normally like other variables), useState is the function which takes initial value of listOfRestaurants as an argument. So, in above example, the initial value of listOfRestaurants is empty array.
+        listOfRestaurants = [{name:'Dominos'}, {name: 'Pizza Hut'}]; 
+    this will not work
+        setListOfRestaurants([{name:'Dominos'}, {name: 'Pizza Hut'}]);
+    this will work. now, listOfRestaurants has two restaurants (Dominos and PIzza Hut)
+- as soon as the state variable is updated, react re-renders the UI (updates the DOM) that's how our UI is updated
