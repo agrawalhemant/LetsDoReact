@@ -12,8 +12,15 @@ const Body = () => {
     const response = await fetch(API_URL);
     const json = await response.json();
     console.log(json.data.data);
-    setListOfRestaurants(json.data.data);
+    setListOfRestaurants(json?.data?.data);
   };
+  if (listOfRestaurants.length === 0) {
+    return (
+      <div class="loader-container">
+        <div class="loader"></div>
+      </div>
+    );
+  }
   return (
     <div id="body">
       <div id="search">
