@@ -1,0 +1,1 @@
+- let's get rid of the hard-coded restaurant list and instead call an API using fetch to get the list of resaturants and show them dynamically on UI.
