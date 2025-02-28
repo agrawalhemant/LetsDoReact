@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+*::-webkit-scrollbar {
+  display: none;
+}
 
 #header {
   border: 1px solid black;

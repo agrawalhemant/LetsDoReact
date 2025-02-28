@@ -7,3 +7,7 @@ ________________________________________________________________________________
     root.render(<RouterProvider router={appRouter} />);
 - we want to keep header as it is on all routes, only the middle portion should change. on / it should be ,Body />, on /about it should be <About /> and for /contect it should be <Contact /> component. This can be achived using children routes and for this also react-router-dom provides a utility, is is a component known as Outlet. 
 - Outlet component replaces itself with the other components based on children routes.
+__________________________________________________________________________________________________________________________________________
+- react applications are SPA (single page application), but they are not SPA by default. The react-router-dom library helps it to be a SPA. If we use anchor tags in the header to go to a different route, our whole page will reload, which is not good. To tackle this, react-router-dom provides us very useful JSX element known as Link. It works like anchor tag (<a href"#">route</a>) but doesn't reload the page. 
+    <Link to="#">route</Link>
+-
