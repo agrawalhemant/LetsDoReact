@@ -29,7 +29,8 @@ const Body = () => {
   };
 
   //Conditional rendering
-  return originalListOfRestaurants.length === 0 ? (
+  return originalListOfRestaurants == null ||
+    originalListOfRestaurants.length === 0 ? (
     <Loader />
   ) : (
     <div id="body">
