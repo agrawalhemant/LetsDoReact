@@ -1,3 +1,8 @@
 - useEffect() is called every time after component is rendered. To avoid this we pass dependency array.
 - in useEffect() we have two arguments: first one is the callback function that needes to be called, and second one of dependency array. The second argument is optional here, but we are passing it as an empty array beacus if we don't pass it, useEffect will be called after every re-rendering of component. Also, we can pass state variables as elements of the dependency array, so that useEffect will only be called after re-rendering if there is any change in those stae variables.
 - remember to never make our state variables or useEffect() outside of component, or inside any if-else condition or inside any loop.
+__________________________________________________________________________________________________________________________________________
+- we can use an npm library called react-router-dom to handle the routing in react application. use npm i react-router-dom to install it.
+- then inside our App component (main componenet), we have to import createBowserRouter function from react-router-dom to create the configuration for the routes, it takes an array of configurations. And we can also import RouterProvider component from react-router-dom to inject this configuration while rendering the app.
+    root.render(<RouterProvider router={appRouter} />);
+- 
