@@ -5,4 +5,5 @@ ________________________________________________________________________________
 - we can use an npm library called react-router-dom to handle the routing in react application. use npm i react-router-dom to install it.
 - then inside our App component (main componenet), we have to import createBowserRouter function from react-router-dom to create the configuration for the routes, it takes an array of configurations. And we can also import RouterProvider component from react-router-dom to inject this configuration while rendering the app.
     root.render(<RouterProvider router={appRouter} />);
-- 
+- we want to keep header as it is on all routes, only the middle portion should change. on / it should be ,Body />, on /about it should be <About /> and for /contect it should be <Contact /> component. This can be achived using children routes and for this also react-router-dom provides a utility, is is a component known as Outlet. 
+- Outlet component replaces itself with the other components based on children routes.
