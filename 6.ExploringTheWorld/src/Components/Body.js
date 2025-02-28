@@ -2,33 +2,61 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { API_URL } from '../Utils/constants';
 import Restaurantcard from './Restaurantcard';
+import Loader from './Loader';
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
+  const [originalListOfRestaurants, setOriginalListOfRestaurants] = useState(
+    []
+  );
   useEffect(() => {
     fetchData();
   }, []);
+  const [searchText, setSearchText] = useState('');
   const fetchData = async () => {
     const response = await fetch(API_URL);
     const json = await response.json();
-    console.log(json.data.data);
+    //console.log(json.data.data);
     setListOfRestaurants(json?.data?.data);
+    setOriginalListOfRestaurants(json?.data?.data);
   };
-  if (listOfRestaurants.length === 0) {
-    return (
-      <div class="loader-container">
-        <div class="loader"></div>
-      </div>
+  const filterRestaurants = (searchText) => {
+    let matchedRestaurants = originalListOfRestaurants.filter((rest) =>
+      rest.brand_name.toLowerCase().includes(searchText.toLowerCase().trim())
     );
-  }
-  return (
+    // console.log(matchedRestaurants);
+    setListOfRestaurants(matchedRestaurants);
+  };
+
+  //Conditional rendering
+  return originalListOfRestaurants.length === 0 ? (
+    <Loader />
+  ) : (
     <div id="body">
       <div id="search">
         <input
           id="search-text"
           type="text"
-          placeholder="Click filter button to see restaurants that have image"
+          placeholder="Type restaurant name..."
+          value={searchText}
+          onChange={(e) => {
+            setSearchText(e.target.value);
+            // filterRestaurants(searchText);
+          }}
+          onKeyUp={(e) => {
+            filterRestaurants(searchText);
+          }}
         />
+        <button
+          id="search-btn"
+          type="submit"
+          onClick={() => {
+            console.log(searchText);
+            filterRestaurants(searchText);
+          }}
+        >
+          Search
+        </button>
         <button
           id="search-btn"
           type="submit"
@@ -36,10 +64,10 @@ const Body = () => {
             setListOfRestaurants(
               listOfRestaurants?.filter((rest) => rest.banner_image_es != '')
             );
-            console.log(listOfRestaurants);
+            //console.log(listOfRestaurants);
           }}
         >
-          Filter
+          see restaurants that have image
         </button>
       </div>
       <div id="res-cards">

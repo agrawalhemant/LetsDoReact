@@ -16,9 +16,6 @@ const Restaurantcard = (props) => {
       <h3>{brand_name}</h3>
       <p>{description}</p>
       <p>
-        <strong>Rating</strong>: {rating}
-      </p>
-      <p>
         <strong>Specialty</strong>: {main_offering}
       </p>
     </div>
