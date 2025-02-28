@@ -3,11 +3,14 @@
 - remember to never make our state variables or useEffect() outside of component, or inside any if-else condition or inside any loop.
 __________________________________________________________________________________________________________________________________________
 - we can use an npm library called react-router-dom to handle the routing in react application. use npm i react-router-dom to install it.
-- then inside our App component (main componenet), we have to import createBowserRouter function from react-router-dom to create the configuration for the routes, it takes an array of configurations. And we can also import RouterProvider component from react-router-dom to inject this configuration while rendering the app.
+- then inside our App component (main component), we have to import createBowserRouter function from react-router-dom to create the configuration for the routes, it takes an array of configurations. And we can also import RouterProvider component from react-router-dom to inject this configuration while rendering the app.
     root.render(<RouterProvider router={appRouter} />);
 - we want to keep header as it is on all routes, only the middle portion should change. on / it should be ,Body />, on /about it should be <About /> and for /contect it should be <Contact /> component. This can be achived using children routes and for this also react-router-dom provides a utility, is is a component known as Outlet. 
 - Outlet component replaces itself with the other components based on children routes.
 __________________________________________________________________________________________________________________________________________
 - react applications are SPA (single page application), but they are not SPA by default. The react-router-dom library helps it to be a SPA. If we use anchor tags in the header to go to a different route, our whole page will reload, which is not good. To tackle this, react-router-dom provides us very useful JSX element known as Link. It works like anchor tag (<a href"#">route</a>) but doesn't reload the page. 
     <Link to="#">route</Link>
--
+__________________________________________________________________________________________________________________________________________
+- There are two types of routing: 1. client-side routing and 2. server-side routing
+    SPA is client-side routing since we are not doing anything on server side while changing the routes, our all routes components. 
+    Server side routing is when we reloads our page and get all the data from server each time a route is hit.
