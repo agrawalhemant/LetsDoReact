@@ -90,6 +90,7 @@ const Body = () => {
       <div id="res-cards">
         {listOfRestaurants.map((restaurant) => (
           <Link
+            target="_blank"
             key={restaurant?.info?.id}
             to={'/restaurant/' + restaurant.info.id}
           >
