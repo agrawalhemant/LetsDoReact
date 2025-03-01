@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   const [btnName, setBtnName] = useState('Log in');
   useEffect(() => {
-    console.log('useEffect called in Header');
+    // console.log('useEffect called in Header');
   }, [btnName]);
   return (
     <header id="header">

@@ -145,3 +145,8 @@
   color: #fff;
   border: 1px solid transparent;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}

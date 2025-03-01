@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { RESTAURANTS_API_URL } from '../Utils/constants';
 import Restaurantcard from './Restaurantcard';
 import Loader from './Loader';
+import { Link } from 'react-router-dom';
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -20,9 +21,9 @@ const Body = () => {
   const fetchData = async () => {
     const response = await fetch(RESTAURANTS_API_URL);
     const json = await response.json();
-    console.log(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+    // console.log(
+    //   json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    // );
     setListOfRestaurants(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
@@ -88,7 +89,12 @@ const Body = () => {
       </div>
       <div id="res-cards">
         {listOfRestaurants.map((restaurant) => (
-          <Restaurantcard key={restaurant.info.id} resData={restaurant} />
+          <Link
+            key={restaurant?.info?.id}
+            to={'/restaurant/' + restaurant.info.id}
+          >
+            <Restaurantcard resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>

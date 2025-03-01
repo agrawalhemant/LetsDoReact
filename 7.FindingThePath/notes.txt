@@ -14,3 +14,7 @@ ________________________________________________________________________________
 - There are two types of routing: 1. client-side routing and 2. server-side routing
     SPA is client-side routing since we are not doing anything on server side while changing the routes, our all routes components. 
     Server side routing is when we reloads our page and get all the data from server each time a route is hit.
+__________________________________________________________________________________________________________________________________________
+- we can define a child route with dynamic routes as well, in our case we are defining a child route as "restaurant/:id" . Here, Id is a dynamic field which can be changed. And upon clickick on this route, we'll hit a MENU_API_URL for that particular restaurant to render <Restaurantmenu /> component.
+- we'll make new component <Restaurantmenu /> to render restaurant menu.
+- we can pass this id param from <App /> component to <Restaurantmenu /> component using a react-router-dom hook known as useParams.
