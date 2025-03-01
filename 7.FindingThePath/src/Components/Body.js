@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { API_URL } from '../Utils/constants';
+import { RESTAURANTS_API_URL } from '../Utils/constants';
 import Restaurantcard from './Restaurantcard';
 import Loader from './Loader';
 
@@ -9,21 +9,33 @@ const Body = () => {
   const [originalListOfRestaurants, setOriginalListOfRestaurants] = useState(
     []
   );
+
   useEffect(() => {
     console.log('useEffect called in body');
     fetchData();
   }, []);
+
   const [searchText, setSearchText] = useState('');
+
   const fetchData = async () => {
-    const response = await fetch(API_URL);
+    const response = await fetch(RESTAURANTS_API_URL);
     const json = await response.json();
-    //console.log(json.data.data);
-    setListOfRestaurants(json?.data?.data);
-    setOriginalListOfRestaurants(json?.data?.data);
+    console.log(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setListOfRestaurants(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setOriginalListOfRestaurants(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
+
   const filterRestaurants = (searchText) => {
-    let matchedRestaurants = originalListOfRestaurants.filter((rest) =>
-      rest.brand_name.toLowerCase().includes(searchText.toLowerCase().trim())
+    let matchedRestaurants = originalListOfRestaurants.filter((restaurant) =>
+      restaurant.info.name
+        .toLowerCase()
+        .includes(searchText.toLowerCase().trim())
     );
     // console.log(matchedRestaurants);
     setListOfRestaurants(matchedRestaurants);
@@ -64,20 +76,20 @@ const Body = () => {
           type="submit"
           onClick={() => {
             setListOfRestaurants(
-              listOfRestaurants?.filter((rest) => rest.banner_image_es != '')
+              listOfRestaurants?.filter(
+                (restaurant) => restaurant.info.avgRating >= 4.5
+              )
             );
             //console.log(listOfRestaurants);
           }}
         >
-          see restaurants that have image
+          see restaurants above 4.5 rating
         </button>
       </div>
       <div id="res-cards">
-        {listOfRestaurants
-          .sort((a, b) => b.sequence - a.sequence)
-          .map((rest) => (
-            <Restaurantcard key={rest.brand_id} restData={rest} />
-          ))}
+        {listOfRestaurants.map((restaurant) => (
+          <Restaurantcard key={restaurant.info.id} resData={restaurant} />
+        ))}
       </div>
     </div>
   );

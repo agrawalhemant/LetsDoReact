@@ -4,4 +4,11 @@ export const APP_LOGO =
 export const CART_LOGO =
   'https://upload.wikimedia.org/wikipedia/commons/4/40/Shopping-cart-icon-with-bags-symbol-only.png';
 
-export const API_URL = 'https://www.eatsure.com/v1/api/get_restaurants';
+export const RESTAURANTS_API_URL =
+  'https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999';
+
+export const RESTAURANT_IMG_URL =
+  'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/';
+
+export const MENU_API_URL =
+  'https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=';

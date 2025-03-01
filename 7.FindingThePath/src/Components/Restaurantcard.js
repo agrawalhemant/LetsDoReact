@@ -1,23 +1,23 @@
+import { RESTAURANT_IMG_URL } from '../Utils/constants';
+
 const Restaurantcard = (props) => {
-  const { brand_name, banner_image_es, description, main_offering, rating } =
-    props?.restData;
+  const { resData } = props;
+  const { cloudinaryImageId, name, avgRating, cuisines, costForTwo, sla } =
+    resData?.info;
+  const deliveryTime = sla?.slaString;
   return (
     <div className="res-card">
       <img
         className="res-img"
-        src={
-          banner_image_es
-            ? banner_image_es
-            : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNNLEL-qmmLeFR1nxJuepFOgPYfnwHR56vcw&s'
-        }
-        alt="food image"
+        src={RESTAURANT_IMG_URL + cloudinaryImageId}
+        alt="restaurant image"
       />
 
-      <h3>{brand_name}</h3>
-      <p>{description}</p>
-      <p>
-        <strong>Specialty</strong>: {main_offering}
-      </p>
+      <h3>{name}</h3>
+      <h4>{cuisines.join(', ')}</h4>
+      <h4>{avgRating} stars</h4>
+      <h4>{costForTwo}</h4>
+      <h4>{deliveryTime}</h4>
     </div>
   );
 };
