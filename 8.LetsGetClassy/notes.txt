@@ -1,3 +1,7 @@
 - to make a class component, we need to make a class that extends React.Component and it should have a render method whihc will return JSX that'll be rendered on UI
 - to recive the props in class component, we need to create a constructor whihc will receive the props and we also need to write super(props).
 - we can use props in render method using this.props
+______________________________________________________________________________________________________________________________________
+- we can also use state variables in class components just like function components using this.state
+- state is a reserved keyword in JS
+- we can create multiple state variables using a single this.state object altogether while in function component we have to create them one by one using useState hook
