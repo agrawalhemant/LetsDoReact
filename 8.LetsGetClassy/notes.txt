@@ -5,3 +5,4 @@ ________________________________________________________________________________
 - we can also use state variables in class components just like function components using this.state
 - state is a reserved keyword in JS
 - we can create multiple state variables using a single this.state object altogether while in function component we have to create them one by one using useState hook
+- never try to update state variable directly, instead use this.setState method which can be used to update multiple state variables at once also
