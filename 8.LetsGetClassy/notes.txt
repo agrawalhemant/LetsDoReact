@@ -1,0 +1,3 @@
+- to make a class component, we need to make a class that extends React.Component and it should have a render method whihc will return JSX that'll be rendered on UI
+- to recive the props in class component, we need to create a constructor whihc will receive the props and we also need to write super(props).
+- we can use props in render method using this.props

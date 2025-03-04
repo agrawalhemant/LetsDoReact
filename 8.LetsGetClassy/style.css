@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+
+#header {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+#logo {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  border-radius: 50%;
+}
+#logo:hover {
+  transform: rotate(360deg);
+  transition: all 1s ease;
+}
+#cart {
+  width: 50px;
+  transition: all 0.3s ease;
+}
+#cart:hover {
+  scale: 2;
+}
+#nav > ul {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+}
+
+#nav > ul > li {
+  margin: 35px 50px 35px 1px;
+}
+
+.list-items:hover {
+  color: orange;
+  text-decoration: underline;
+}
+
+#search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#search-text {
+  margin: 5px;
+  width: 500px;
+  padding: 7px;
+  color: red;
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#search-text:hover {
+  border: 2px solid #f0f;
+}
+
+#search-btn {
+  width: 100px;
+  margin: 5px;
+  padding: 7px;
+  color: blue;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+#search-btn:hover {
+  background-color: #f0f;
+  color: white;
+  cursor: pointer;
+}
+
+#res-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.res-card {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.res-card:hover {
+  background-color: #f0f0f0;
+  scale: 1.1;
+}
+
+.res-img {
+  width: 200px;
+  height: 220px;
+}
+
+#loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+#loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#login-btn {
+  padding: 2px;
+  cursor: pointer;
+  width: 50px;
+  color: green;
+  transition: all 0.1s ease;
+  border: 1px solid#000;
+}
+
+#login-btn:hover {
+  scale: 1.2;
+  background-color: green;
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#user-card {
+  border: solid 2px black;
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
+}
