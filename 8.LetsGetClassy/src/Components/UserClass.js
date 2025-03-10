@@ -1,34 +1,44 @@
 import React from 'react';
+import { Github_User_API } from '../Utils/constants';
+import Loader from './Loader';
 
 class UserClass extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      count1: 0,
-      count2: 2,
+      userInfo: {},
     };
+    console.log('Constructor called in UserClass');
   }
-  render() {
-    const { name, location } = this.props;
-    const { count1, count2 } = this.state;
-    return (
-      <div id="user-card">
-        <h1>Count1: {count1}</h1>
 
-        <h1>Count2: {count2}</h1>
-        <button
-          onClick={() =>
-            this.setState({
-              count1: count1 + 1,
-              count2: count2 + 1,
-            })
-          }
-        >
-          Increment count1 & count2
-        </button>
+  async componentDidMount() {
+    const data = await fetch(Github_User_API + 'agrawalhemant');
+    const json = await data.json();
+    console.log(json);
+    this.setState({
+      userInfo: json,
+    });
+  }
+
+  async componentDidUpdate() {
+    console.log('componentDidUpdate called in UserClass');
+  }
+
+  async componentWillUnmount() {
+    console.log('componentWillUnmount called in UserClass');
+  }
+
+  render() {
+    console.log('render called in UserClass');
+    const { name, bio, avatar_url } = this.state.userInfo;
+    // console.log('name : ' + name);
+    return name == null ? (
+      <Loader />
+    ) : (
+      <div id="user-card">
         <h2>Name: {name}</h2>
-        <h3>Location: {location}</h3>
-        <h3>Contact: @agrawalhemant</h3>
+        <img id="user-img" src={avatar_url} alt="Avatar" />
+        <h3>{bio}</h3>
       </div>
     );
   }

@@ -6,3 +6,9 @@ ________________________________________________________________________________
 - state is a reserved keyword in JS
 - we can create multiple state variables using a single this.state object altogether while in function component we have to create them one by one using useState hook
 - never try to update state variable directly, instead use this.setState method which can be used to update multiple state variables at once also
+- this.setState is equivalent to setState() method of useState hook
+______________________________________________________________________________________________________________________________________
+- while rendering a class component, firstly constructor is called during initiation phase of class and after than render method is called which return the JSX to render on UI
+- we should make an PAI call inside componentDidMount() mehtod of class component as it is the last one to be called. It is equivalent to useEffect of funciton component and also workds like it.
+- constructor => render => componentDidMount => (if state changed) render => componentDidUpdate => (if component/url is changed) componentWillUnmount
+- read about react lifecycle from https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/ for Class components

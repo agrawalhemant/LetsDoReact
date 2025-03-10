@@ -5,9 +5,8 @@ const About = () => {
   return (
     <div id="about">
       <h1>About Us</h1>
-      <h4>This is about section of our app</h4>
-      <User name={'Hemant (function)'} location={'Mathura (function)'} />
-      <UserClass name={'Hemant (Class)'} location={'Mathura (class)'} />
+      <h4>This is about section</h4>
+      <UserClass />
     </div>
   );
 };
