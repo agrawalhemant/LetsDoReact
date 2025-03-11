@@ -12,3 +12,6 @@ ________________________________________________________________________________
 - we should make an PAI call inside componentDidMount() mehtod of class component as it is the last one to be called. It is equivalent to useEffect of funciton component and also workds like it.
 - constructor => render => componentDidMount => (if state changed) render => componentDidUpdate => (if component/url is changed) componentWillUnmount
 - read about react lifecycle from https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/ for Class components
+- Use of ComponentWillMount is to clear up the variables or other code. for example if we have setup a setInterval function in ComponentDidMount then we can clear it in ComponentWillMount or else it will keep running. and if we come back on about page from other URL then a new setInterval will start. That's why it's important to clear up interval while leaving the URL using ComponentWillMount().
+- The same problem may occur in functional component also, if we start an interval in useEffect() then it will keep running even after changing the URL so to stop it, we should clear up the interval using return method inside useEffect() method.
+- we can have a return method in useEffect which will run when we leave the URL

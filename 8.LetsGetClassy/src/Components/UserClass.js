@@ -18,6 +18,9 @@ class UserClass extends React.Component {
     this.setState({
       userInfo: json,
     });
+    // this.timer = setInterval(() => {
+    //   console.log('setInterval called in UserClass');
+    // }, 2000);
   }
 
   async componentDidUpdate() {
@@ -26,6 +29,7 @@ class UserClass extends React.Component {
 
   async componentWillUnmount() {
     console.log('componentWillUnmount called in UserClass');
+    //clearInterval(this.timer);
   }
 
   render() {
