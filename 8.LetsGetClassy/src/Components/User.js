@@ -6,15 +6,13 @@ import { Github_User_API } from '../Utils/constants';
 const User = () => {
   const [userInfo, setUserInfo] = useState();
   useEffect(() => {
-    const userData = getUserData();
-    setUserInfo(userData);
+    getUserData();
   }, []);
 
   var getUserData = async () => {
     const data = await fetch(Github_User_API + 'agrawalhemant');
     const json = await data.json();
-    console.log(json);
-    return json;
+    setUserInfo(json);
   };
 
   return userInfo == null ? (
