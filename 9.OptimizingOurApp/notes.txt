@@ -2,3 +2,10 @@
 - since hooks are basically utility functions so we can make folder under utils for CustomHooks and our hook should always start with lowercase "use" as part of naming convention
 - let's make a new custom hook useRestaurantMenu which will have the functionality to fetch the restaurant menu, we'll simple clean the RestaurantMenu component to move the fetching part to our hook.
 - let's learn more about custom hooks by creating another hook useOnlineStatus which can be used to check whether the user is online or not.
+__________________________________________________________________________________________________________________________________________
+- we are using parcel as a bundler, which basically means it is bundling all our js code in a single js file. This is useful for small scale applications as they has lesser components which makes our bundled js file not too heavy. But if we want to expland our application to make it large scale then having all the js code in a single file will make it slow to load. To resolve this issue, comes the concept of lazy loading.
+- lazy loading is also know as chunking, dynamic bundling, code splitting, on demand loading, dynamic import etc. It all means same thing.
+- in this technique, we use the "lazy" function and also <Suspense /> component both of which are provided by react.
+- using this, our code is splitted into chunks. the lazy loading component is presnt in separate js file which only loads when needed.
+- we generally put lazy loading on the component which is very huge or has so many child components inside it.
+- Suspense component is used so that we can show a fallback while our js file is loaded where we can show loader

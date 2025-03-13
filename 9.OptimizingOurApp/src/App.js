@@ -6,8 +6,12 @@ import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import Error from './Components/Error';
 import About from './Components/About';
 import Contact from './Components/Contact';
-import Restaurantmenu from './Components//Restaurantmenu';
+import Restaurantmenu from './Components/Restaurantmenu';
 import useOnlineStatus from './Utils/Hooks/useOnlineStatus';
+import Loader from './Components/Loader';
+import { lazy, Suspense } from 'react';
+
+const Grocery = lazy(() => import('./Components/Grocery'));
 
 const App = () => {
   const onlineStatus = useOnlineStatus();
@@ -28,6 +32,14 @@ var appRouter = createBrowserRouter([
       { path: '/about', element: <About /> },
       { path: '/contact', element: <Contact /> },
       { path: '/restaurant/:id', element: <Restaurantmenu /> },
+      {
+        path: '/grocery',
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Grocery />
+          </Suspense>
+        ),
+      },
     ],
     errorElement: <Error />,
   },

@@ -27,6 +27,9 @@ const Header = () => {
           <li className="list-items">
             <Link to="/contact">Contact Us</Link>
           </li>
+          <li className="list-items">
+            <Link to="/grocery">Grocery</Link>
+          </li>
           <li>
             <img id="cart" src={CART_LOGO} alt="cart" />
           </li>
