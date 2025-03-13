@@ -169,3 +169,8 @@ a {
 #user-img {
   width: 300px;
 }
+
+#online-status {
+  text-decoration: none;
+  text-transform: uppercase;
+}

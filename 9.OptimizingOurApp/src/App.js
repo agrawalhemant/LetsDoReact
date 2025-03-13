@@ -7,12 +7,14 @@ import Error from './Components/Error';
 import About from './Components/About';
 import Contact from './Components/Contact';
 import Restaurantmenu from './Components//Restaurantmenu';
+import useOnlineStatus from './Utils/Hooks/useOnlineStatus';
 
 const App = () => {
+  const onlineStatus = useOnlineStatus();
   return (
     <div>
       <Header />
-      <Outlet />
+      {onlineStatus ? <Outlet /> : <h1>Oops! Looks like you're offline</h1>}
     </div>
   );
 };

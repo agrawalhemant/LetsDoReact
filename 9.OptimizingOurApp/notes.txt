@@ -1,3 +1,4 @@
 - we should clean up our messy code into modular way so that it follows SOLID principles, for example our RestaurantMenu.js component was fetching as well as displaying the restaurant menu data which is breaking SRP. So we should make a custom hook to fetch the data and RestaurantMenu.js should only be used for displaying data.
 - since hooks are basically utility functions so we can make folder under utils for CustomHooks and our hook should always start with lowercase "use" as part of naming convention
 - let's make a new custom hook useRestaurantMenu which will have the functionality to fetch the restaurant menu, we'll simple clean the RestaurantMenu component to move the fetching part to our hook.
+- let's learn more about custom hooks by creating another hook useOnlineStatus which can be used to check whether the user is online or not.
