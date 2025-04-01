@@ -1,7 +1,7 @@
 - let's style our app to make it more appealing. There are multiple ways to do it, using CSS, SASS, SCSS, styled-components, Bootstrap, ChakraUI, MaterialUI, Tailwind etc. And we can choose any one of them but recommended way to style our app is either styled-components or any CSS framework like Bootstrap or materialUi or Tailwind etc.
 - Tailwind CSS behind the scen uses PostCSS. PostCSS is a tool to transform CSS with Javascript.
 - install Tailwind as per https://tailwindcss.com/docs/installation/framework-guides/parcel and make configuration files
-- parcel(bundler) will use .postcssrc config file to understand Tailwind 
+- we need to add .postcssrc file. parcel(bundler) will use .postcssrc config file to understand Tailwind 
 ________________________________________________________________________________________________________________________________________
 - tailwind provides class for every style of CSS so we can simply use it using className in JSX element
 - if we use same className multiple times in same JSX element, tailwind automatically removes dupicates and make it single className
