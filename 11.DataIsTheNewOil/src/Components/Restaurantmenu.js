@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import useRestaurantMenu from '../Utils/Hooks/useRestaurantMenu';
 import Loader from './Loader';
+import RestaurantCategory from './RestaurantCategory';
 
 const Restaurantmenu = () => {
   const { id } = useParams();
@@ -13,26 +14,27 @@ const Restaurantmenu = () => {
 
   const { name, cuisines, costForTwoMessage, avgRating } =
     restaurantInfo?.cards[2]?.card?.card?.info;
-  const { itemCards } =
-    restaurantInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
-      ?.card;
+  const categoriesData =
+    restaurantInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (card) =>
+        card?.card?.card['@type'] ==
+        'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory'
+    );
 
   return (
     <div className="text-center">
-      <h1 className="text-6xl font-semibold">{name}</h1>
-      <p className="py-2 text-lg">
+      <h1 className="text-4xl font-bold">{name}</h1>
+      <p className="my-2 text-lg font-semibold">
         {cuisines.join(', ')} : {costForTwoMessage}
       </p>
-      <p className="text-2xl">Rating: {avgRating}</p>
-      <h2>MENU</h2>
-      <ul>
-        {itemCards.map((item) => (
-          <li key={item?.card?.info?.id}>
-            {item?.card?.info?.name} : Rs.
-            {item?.card?.info?.price || item?.card?.info?.defaultPrice}
-          </li>
-        ))}
-      </ul>
+      {categoriesData.map((category) => {
+        return (
+          <RestaurantCategory
+            key={category?.card?.card?.categoryId}
+            data={category?.card?.card}
+          />
+        );
+      })}
     </div>
   );
 };

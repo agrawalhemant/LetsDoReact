@@ -2,3 +2,6 @@
 - We can make a higher order component inside Restaurantcard.js and use it to display the restaurants that are veg only. we have to export our higher order component and use it in body to make a JSX for RestaurantcardWithVegLabel which can be rendered conditionally based on the value of veg field if it is true or not.
 - we have to pass the props same like normal Restaurantcard inside RestaurantcardWithVegLabel also, and inside higher order component we have to receive it. then we can pass these props to Restaurantcard inside RestaurantcardWithVegLabel using destructuring.
 - i've also implemented a toggle button to see the "veg only" restaurants by searching for tailwind css toggle button on google and then implementing the logic by capturing the cehecked or unchecked state of toggle button using event.target.checked
+__________________________________________________________________________________________________________________________________________
+- let's use the MENU_API_URL to get data for all the available meals of restaurant and design our menu page.
+- we can simply filter out the data which is of type categories and then render the menu of that category as an accordion on menu page

@@ -11,6 +11,6 @@ export const RESTAURANT_IMG_URL =
   'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/';
 
 export const MENU_API_URL =
-  'https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=';
+  'https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.633911&lng=77.343860&restaurantId=';
 
 export const Github_User_API = 'https://api.github.com/users/';

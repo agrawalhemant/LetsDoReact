@@ -70,12 +70,12 @@ const Body = () => {
           onClick={() => {
             setListOfRestaurants(
               listOfRestaurants?.filter(
-                (restaurant) => restaurant?.info?.avgRating >= 4.7
+                (restaurant) => restaurant?.info?.avgRating >= 4.5
               )
             );
           }}
         >
-          see restaurants above 4.7 rating only
+          see restaurants above 4.5 rating only
         </button>
 
         <label className="inline-flex items-center mx-5 cursor-pointer">
