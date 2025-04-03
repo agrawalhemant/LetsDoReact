@@ -1,12 +1,18 @@
 import ItemList from './ItemList';
 import { useState } from 'react';
 
-const RestaurantCategory = (props) => {
-  const data = props?.data;
-  const [showItems, setShowItems] = useState(false);
-
+const RestaurantCategory = ({
+  data,
+  showItems,
+  setShowIndex,
+  hideShowIndex,
+}) => {
   const handleClick = () => {
-    setShowItems(!showItems);
+    if (showItems) {
+      hideShowIndex();
+    } else {
+      setShowIndex();
+    }
   };
 
   return (
@@ -15,7 +21,7 @@ const RestaurantCategory = (props) => {
         className="flex justify-between cursor-pointer"
         onClick={handleClick}
       >
-        <span className="font-semibold">
+        <span className="font-bold">
           {data?.title} ({data?.itemCards?.length} Items)
         </span>
         <span className="text-lg">{showItems ? '🔼' : '🔽'}</span>

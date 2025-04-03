@@ -5,3 +5,7 @@
 __________________________________________________________________________________________________________________________________________
 - let's use the MENU_API_URL to get data for all the available meals of restaurant and design our menu page.
 - we can simply filter out the data which is of type categories and then render the menu of that category as an accordion on menu page
+- let's design an accordion from scratch and handle the showing functionality of items
+- what if we need to collapse all the other opened accordions when we click to open an accordion??? this can be done if we control our child component using parent component. In this, the child component is known as conrolled component. So in our case, Restaurantmenu is the parent component and Restaurantcard is child component (controlled component)
+- we can also modify the state variable of parent component from child component if we pass setState functions of that state variable as a function prop to the child. So here, we'll pass setShowIndex function to the Restaurantcategory component and then in Restaurantcategory component we'll simply call that function onClick event. Similarly we can pass a function by name hideShowIndex which will pass index as -1 so all the items will be hidden.
+- this whole above concept is known as lifting state up.

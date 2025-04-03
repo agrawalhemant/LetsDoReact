@@ -12,7 +12,7 @@ const ItemList = (props) => {
           className="p-2 m-2 border-gray-300 border-t-2 text-left flex justify-between"
         >
           <div className="w-9/12">
-            <div className="py-2">
+            <div className="py-2 font-semibold">
               <span>{item?.card?.info?.name}</span>
               <span>
                 {' '}
