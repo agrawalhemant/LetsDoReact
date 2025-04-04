@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { RESTAURANTS_API_URL } from '../Utils/constants';
 import Restaurantcard, { withVegLabel } from './Restaurantcard';
 import Loader from './Loader';
 import { Link } from 'react-router-dom';
+import UserContext from '../Utils/Contexts/UserContext';
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -13,9 +13,9 @@ const Body = () => {
   const [searchText, setSearchText] = useState('');
   const RestaurantcardWithVegLabel = withVegLabel(Restaurantcard);
 
-  console.log(listOfRestaurants);
+  //console.log(listOfRestaurants);
   useEffect(() => {
-    console.log('useEffect called in body');
+    //console.log('useEffect called in body');
     fetchData();
   }, []);
 
@@ -43,6 +43,7 @@ const Body = () => {
     setListOfRestaurants(matchedRestaurants);
   };
 
+  const { username, setUserName } = useContext(UserContext);
   //Conditional rendering
   return originalListOfRestaurants == null ||
     originalListOfRestaurants.length === 0 ? (
@@ -99,6 +100,16 @@ const Body = () => {
             Veg Only
           </span>
         </label>
+
+        <input
+          className="w-72 px-2 mx-4 border-2 border-solid border-slate-400 rounded-md"
+          type="text"
+          placeholder="Type username..."
+          value={username}
+          onChange={(e) => {
+            setUserName(e.target.value);
+          }}
+        />
       </div>
       <div className="flex flex-wrap justify-around">
         {listOfRestaurants.map((restaurant) => (

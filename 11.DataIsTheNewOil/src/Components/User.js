@@ -18,7 +18,7 @@ const User = () => {
   return userInfo == null ? (
     <Loader />
   ) : (
-    <div id="user-card">
+    <div className="text-center">
       <h2>Name: {userInfo.name}</h2>
       <img id="user-img" src={userInfo.avatar_url} alt="Avatar" />
       <h3>{userInfo.bio}</h3>

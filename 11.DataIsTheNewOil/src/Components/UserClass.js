@@ -1,6 +1,7 @@
 import React from 'react';
 import { Github_User_API } from '../Utils/constants';
 import Loader from './Loader';
+import UserContext from '../Utils/Contexts/UserContext';
 
 class UserClass extends React.Component {
   constructor(props) {
@@ -39,8 +40,14 @@ class UserClass extends React.Component {
     return name == null ? (
       <Loader />
     ) : (
-      <div id="user-card">
-        <h2>Name: {name}</h2>
+      <div className="text-center">
+        <UserContext.Consumer>
+          {(data) => (
+            <div>
+              <h2 className="font-bold">Name: {data.username}</h2>
+            </div>
+          )}
+        </UserContext.Consumer>
         <img id="user-img" src={avatar_url} alt="Avatar" />
         <h3>{bio}</h3>
       </div>

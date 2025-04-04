@@ -1,8 +1,9 @@
 import { CART_LOGO } from '../Utils/constants';
 import { APP_LOGO } from '../Utils/constants';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import useOnlineStatus from '../Utils/Hooks/useOnlineStatus';
+import UserContext from '../Utils/Contexts/UserContext';
 
 const Header = () => {
   const [btnName, setBtnName] = useState('Log in');
@@ -10,6 +11,9 @@ const Header = () => {
   useEffect(() => {
     // console.log('useEffect called in Header');
   }, [btnName]);
+
+  const { username } = useContext(UserContext);
+  console.log('username: ' + username);
   return (
     <header className="flex justify-between sticky top-0 z-1 bg-fuchsia-100">
       <img
@@ -48,6 +52,7 @@ const Header = () => {
             {btnName}
           </button>
         </li>
+        <li className="mx-4 font-bold">{username}</li>
       </ul>
     </header>
   );

@@ -1,9 +1,6 @@
 import { RESTAURANT_IMG_URL } from '../Utils/constants';
 
-const ItemList = (props) => {
-  console.log(props?.items);
-  const items = props?.items;
-
+const ItemList = ({ items }) => {
   return (
     <div>
       {items.map((item) => (
