@@ -1,0 +1,10 @@
+- Redux works in the data layer of our application and it is used to store the data in centralised way
+- Redux is not mandatory, it depends on whether we need it or not. If we are making large size application where the data is heavil;y used where a lot of read/write operations are happening then we may need redux.
+- Redux is one another solution of props drilling problem in react which is used to manage state
+- there is another libray zustand which is similar to redux
+__________________________________________________________________________________________________________________________________________
+- we need 2 packages for using redux, fiest one is react-redux and second one is redux-toolkit (rtk)
+- we can write redux without rtk as well but it'll be a lot difficult and has messy code. rtk provides some out of the box features which makes development easier. rtk is newer way to write redux.
+- redux store is a very big JS object and it's kept at a central placed which is accessible globally.
+- redix store can be divided into multiple parts and each part is called as slice. For example, card data can be stored in cart slice and user data can be stored in user slice etc.
+- let's build cart slice for now. we have to click add button in RestaurantMenu and then that item should be added to cart, but we can't directly add anything in redux slice. We have to click the add button, which will dispatch an action and then that action calls a function which can update the cart slice. The function which is being called by action is called as REDUCER. To read the data from cart slice we need a SELECTOR. Reading the data is known as subsribing to the store.
